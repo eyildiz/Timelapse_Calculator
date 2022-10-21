@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CalculationTypeCardView" parent="@style/Widget.Neumorph.CardView" >
+        <item name="android:padding">@dimen/_24sdp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CalculationTypeTitle" parent="@style/Widget.Neumorph.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/sweet_black_background</item>
+        <item name="android:textSize">@dimen/_11sdp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginTop">@dimen/_6sdp</item>
+    </style>
+
+</resources>

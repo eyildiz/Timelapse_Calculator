@@ -11,26 +11,165 @@
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <Button
-            android:id="@+id/button_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/next"
-            app:layout_constraintBottom_toTopOf="@id/textview_first"
-            app:layout_constraintEnd_toEndOf="parent"
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/cvClipDuration"
+            style="@style/CalculationTypeCardView"
+            app:layout_constraintEnd_toStartOf="@+id/cvShutterInterval"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textview_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_movie" />
+
+                <soup.neumorphism.NeumorphTextView
+                    style="@style/CalculationTypeTitle"
+                    android:text="Clip\nDuration" />
+
+            </LinearLayout>
+
+
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/cvShutterInterval"
+            style="@style/CalculationTypeCardView"
+            app:neumorph_shapeType="basin"
+            app:layout_constraintEnd_toStartOf="@+id/cvEventDuration"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cvClipDuration"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_shutter" />
+
+                <soup.neumorphism.NeumorphTextView
+                    style="@style/CalculationTypeTitle"
+                    android:text="Shutter\nInterval"
+                     />
+
+            </LinearLayout>
+
+
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/cvEventDuration"
+            style="@style/CalculationTypeCardView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cvShutterInterval"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_timer" />
+
+                <soup.neumorphism.NeumorphTextView
+                    style="@style/CalculationTypeTitle"
+                    android:text="Event\nDuration" />
+            </LinearLayout>
+
+
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_first" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvEventDuration"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:padding="@dimen/_20sdp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewSelectionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Clip Duration"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tfSelection"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.3"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/textViewSelectionLabel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:suffixText="sec"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.neobaran.open.android.nruler.RulerView
+                    android:id="@+id/rulerViewSelection"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.7"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    app:centerLineColor="#f24b16"
+                    app:centerLineHeight="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tfSelection"
+                    app:layout_constraintStart_toEndOf="@id/tfSelection"
+                    app:layout_constraintTop_toBottomOf="@id/textViewSelectionLabel"
+                    app:numDigits="0"
+                    app:numMaxValue="300"
+                    app:numMinValue="5"
+                    app:numTextColor="@color/sweet_black_background"
+                    app:numValue="80"
+                    app:sideLineColor="#bcbcbc"
+                    app:sideLineHeight="8dp"
+                    app:textSize="12sp"
+                    app:textSpaceHeight="6dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </soup.neumorphism.NeumorphCardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
