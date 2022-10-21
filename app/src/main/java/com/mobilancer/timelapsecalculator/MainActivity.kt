@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.mobilancer.timelapsecalculator.databinding.ActivityMainBinding
+import soup.neumorphism.ShapeType
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,17 +25,37 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.cvClipDuration.setOnClickListener {
+            setNeumorphicCardsAsFlat()
+            binding.cvClipDuration.setShapeType(ShapeType.PRESSED)
+        }
+        binding.cvEventDuration.setOnClickListener {
+            setNeumorphicCardsAsFlat()
+            binding.cvEventDuration.setShapeType(ShapeType.PRESSED)
+        }
+        binding.cvShutterInterval.setOnClickListener {
+            setNeumorphicCardsAsFlat()
+            binding.cvShutterInterval.setShapeType(ShapeType.PRESSED)
+        }
+
+
 /*        setSupportActionBar(binding.toolbar)*/
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 /*        appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)*/
 
-        binding.fab.setOnClickListener { view ->
+/*        binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAnchorView(R.id.fab)
                 .setAction("Action", null).show()
-        }
+        }*/
+    }
+
+    fun setNeumorphicCardsAsFlat(){
+        binding.cvEventDuration.setShapeType(ShapeType.FLAT)
+        binding.cvClipDuration.setShapeType(ShapeType.FLAT)
+        binding.cvShutterInterval.setShapeType(ShapeType.FLAT)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/LocalProjects/TimelapseCalculator/app/src/main/res/layout/activity_main.xml" value="0.36069651741293535" />
         <entry key="..\:/LocalProjects/TimelapseCalculator/app/src/main/res/layout/content_main.xml" value="0.3723958333333333" />
-        <entry key="..\:/LocalProjects/TimelapseCalculator/app/src/main/res/layout/fragment_first.xml" value="0.4818181818181818" />
+        <entry key="..\:/LocalProjects/TimelapseCalculator/app/src/main/res/layout/fragment_first.xml" value="0.33410138248847926" />
+        <entry key="..\:/LocalProjects/TimelapseCalculator/app/src/main/res/layout/header_main.xml" value="0.3723958333333333" />
+        <entry key="..\:/LocalProjects/TimelapseCalculator/app/src/main/res/layout/view_ruler_input.xml" value="0.36159600997506236" />
       </map>
     </option>
   </component>

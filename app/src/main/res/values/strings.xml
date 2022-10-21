@@ -1,5 +1,13 @@
 <resources>
+
+
     <string name="app_name">Timelapse Calculator</string>
+    <string name="label_second_shortened">sec</string>
+    <string name="label_please_input_clip_length">Please Input Clip Length</string>
+    <string name="label_please_input_shutter_interval">Please Input Shutter Interval</string>
+    <string name="label_please_input_even_duration">Please Input Event Duration</string>
+    <string name="min_format" >~ %1$s min</string>
+
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
