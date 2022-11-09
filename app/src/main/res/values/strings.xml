@@ -14,10 +14,9 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="label_result_shutter_interval_html"><![CDATA[<span>According to the specified parameters, the <u>shutter interval</u> should be <span style="color:#B90504;"><b>%1$d seconds</b></span></span>]]></string>
-    <string name="label_result_total_photo_html"><![CDATA[<span>A total of <span style="color:#B90504;"><b>%1$d photos</b></span>  will be taken during the event. </span>]]></string>
-    <string name="label_result_total_storage_html"><![CDATA[<span>You will need about <span style="color:#B90504;"><b> %1$d GB </b></span>of free storage   space for the event. </span>]]></string>
-
+    <string name="label_shutter_interval">Shutter Interval</string>
+    <string name="label_clip_duration">Clip Duration</string>
+    <string name="label_event_duration">Event Duration</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

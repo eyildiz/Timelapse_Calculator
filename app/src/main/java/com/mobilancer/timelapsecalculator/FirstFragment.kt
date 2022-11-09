@@ -11,7 +11,10 @@ import androidx.core.text.HtmlCompat
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.chip.Chip
 import com.mobilancer.timelapsecalculator.databinding.FragmentFirstBinding
+import com.mobilancer.timelapsecalculator.domain.CalculationResultMode
+import com.mobilancer.timelapsecalculator.domain.CalculationType
 import com.mobilancer.timelapsecalculator.domain.TimelapseCalculation
+import com.mobilancer.timelapsecalculator.ui.uicomponents.CalculationResultInputProperties
 import com.mobilancer.timelapsecalculator.ui.uicomponents.RulerInputChangeListener
 import com.mobilancer.timelapsecalculator.ui.uicomponents.RulerInputProperties
 import com.mobilancer.timelapsecalculator.util.fromHtml
@@ -48,7 +51,7 @@ class FirstFragment : Fragment(), RulerInputChangeListener {
 
     private fun renderViews() = with(binding) {
 
-        with(rulerInputClipLength){
+        with(rulerInputClipLength) {
             render(
                 RulerInputProperties(
                     hint = R.string.label_second_shortened,
@@ -61,7 +64,7 @@ class FirstFragment : Fragment(), RulerInputChangeListener {
             setOnValueChangeListener(this@FirstFragment)
         }
 
-        with(rulerInputEventDuration){
+        with(rulerInputEventDuration) {
             render(
                 RulerInputProperties(
                     hint = R.string.label_second_shortened,
@@ -82,14 +85,13 @@ class FirstFragment : Fragment(), RulerInputChangeListener {
             }
         }
 
-/*        val htmlResultShutterString = getString(R.string.label_result_shutter_interval_html, 18)
-        txtResultShutter.text = HtmlCompat.fromHtml(htmlResultShutterString, HtmlCompat.FROM_HTML_MODE_LEGACY)
+        calculationResult.render(
+            CalculationResultInputProperties(
+                initialMode = CalculationResultMode.NO_RESULT,
+                initalCalculationType = CalculationType.SHUTTER_INTERVAL
+            )
+        )
 
-        val htmlResultTotalPhotoString = getString(R.string.label_result_total_photo_html, 240)
-        txtResultTotalPhotos.text = htmlResultTotalPhotoString.fromHtml()
-
-        val htmlResultTotalStorageString = getString(R.string.label_result_total_storage_html, 4)
-        txtResultStorage.text = htmlResultTotalStorageString.fromHtml()*/
     }
 
     override fun onDestroyView() {
@@ -100,4 +102,5 @@ class FirstFragment : Fragment(), RulerInputChangeListener {
     override fun onValueChanged(value: String) {
         Log.d("TIMELAPSE", "Value Changed $value")
     }
+
 }
