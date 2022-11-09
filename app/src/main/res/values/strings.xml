@@ -6,7 +6,7 @@
     <string name="label_please_input_clip_length">Please Input Clip Length</string>
     <string name="label_please_input_shutter_interval">Please Input Shutter Interval</string>
     <string name="label_please_input_even_duration">Please Input Event Duration</string>
-    <string name="min_format" >~ %1$s min</string>
+    <string name="min_format">~ %1$s min</string>
 
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
@@ -14,6 +14,10 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="label_result_shutter_interval_html"><![CDATA[<span>According to the specified parameters, the <u>shutter interval</u> should be <span style="color:#B90504;"><b>%1$d seconds</b></span></span>]]></string>
+    <string name="label_result_total_photo_html"><![CDATA[<span>A total of <span style="color:#B90504;"><b>%1$d photos</b></span>  will be taken during the event. </span>]]></string>
+    <string name="label_result_total_storage_html"><![CDATA[<span>You will need about <span style="color:#B90504;"><b> %1$d GB </b></span>of free storage   space for the event. </span>]]></string>
+
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

@@ -13,7 +13,6 @@
     <soup.neumorphism.NeumorphCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_4sdp"
         android:padding="@dimen/_20sdp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -79,14 +78,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/_10sdp"
-                app:layout_constraintStart_toStartOf="@+id/rulerViewSelection"
+                app:layout_constraintStart_toStartOf="@+id/tfSelection"
                 app:layout_constraintTop_toBottomOf="@id/rulerViewSelection"
-                app:layout_constraintEnd_toEndOf="@id/rulerViewSelection"
+                app:layout_constraintEnd_toEndOf="@id/tfSelection"
                 android:textAlignment="center"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:textStyle="italic"
                 android:visibility="gone"
-                android:text=""
+                tools:visibility="visible"
+                android:text="~1 min"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

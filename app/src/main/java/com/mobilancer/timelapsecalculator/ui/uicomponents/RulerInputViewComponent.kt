@@ -24,6 +24,8 @@ class RulerInputViewComponent @JvmOverloads constructor(
 //        inflater.inflate(R.layout.view_ruler_input, this)
 //    }
 
+    private lateinit var onValueChangeListener : RulerInputChangeListener
+
     private val binding : ViewRulerInputBinding by lazy{
         ViewRulerInputBinding.inflate(LayoutInflater.from(context), this, true)
     }
@@ -52,6 +54,10 @@ class RulerInputViewComponent @JvmOverloads constructor(
             value = it.toInt()
             tiValue.setText(value.toString())
 
+/*            onValueChangeListener?.let{
+                onValueChangeListener.onValueChanged(value.toString())
+            }*/
+
             if(inputProperties.isMinuteHintVisible) {
                 val minute = calculateMinuteRepresentation(value)
                 textViewMinuteRepresentation.text = ctx.getString(R.string.min_format, String.format("%.1f", minute))
@@ -65,6 +71,9 @@ class RulerInputViewComponent @JvmOverloads constructor(
                 currentValue?.run {
                     rulerViewSelection.setValue(this.toFloat())
                     value = this
+
+
+
                     if(inputProperties.isMinuteHintVisible) {
                         val minute = calculateMinuteRepresentation(value)
                         textViewMinuteRepresentation.text = ctx.getString(R.string.min_format, String.format("%.1f", minute))
@@ -72,8 +81,17 @@ class RulerInputViewComponent @JvmOverloads constructor(
                 }
             }
             shouldChangeRulerView = true
+
+            onValueChangeListener?.let {
+                onValueChangeListener.onValueChanged(value.toString())
+            }
+
         }
 
+    }
+
+    fun setOnValueChangeListener(listener : RulerInputChangeListener ){
+        this.onValueChangeListener = listener
     }
 
     private fun calculateMinuteRepresentation(value: Int): Float {

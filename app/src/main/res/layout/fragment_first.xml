@@ -1,71 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment"
-    >
+    tools:context=".FirstFragment">
 
     <com.mobilancer.timelapsecalculator.ui.uicomponents.RulerInputViewComponent
         android:id="@+id/rulerInputClipLength"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.mobilancer.timelapsecalculator.ui.uicomponents.RulerInputViewComponent
         android:id="@+id/rulerInputEventDuration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rulerInputClipLength"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rulerInputClipLength" />
 
     <com.google.android.material.chip.ChipGroup
-        android:layout_width="0dp"
-        app:singleSelection="true"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/rulerInputEventDuration"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp"
         android:id="@+id/chipGroupFpsChoice"
-        >
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rulerInputEventDuration"
+        app:singleSelection="true">
+
         <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:text="24 FPS"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_height="wrap_content"
             android:id="@+id/chipFps24"
-            />
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:text="30 FPS"
             style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/_10sdp"
+            android:text="24 fps" />
+
+        <com.google.android.material.chip.Chip
             android:id="@+id/chipFps30"
-            />
+            style="@style/ChipStyle"
+            android:text="30 fps" />
+
         <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:text="60 FPS"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_height="wrap_content"
             android:id="@+id/chipFps60"
-            />
+            style="@style/ChipStyle"
+            android:text="60 fps" />
+
         <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:text="120 FPS"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_height="wrap_content"
             android:id="@+id/chipFps120"
-            />
+            style="@style/ChipStyle"
+            android:text="120 fps" />
     </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/btnCalculate"
+        style="@style/Widget.Material3.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="Calculate"
+        app:icon="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroupFpsChoice" />
+
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCalculate">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/txtResultShutter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_shutter"
+                    android:drawablePadding="@dimen/_6sdp"
+                    android:text="Shutter Interval"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:id="@+id/txtShutterValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/sweet_red"
+                    android:text="3 sec"
+                    android:textSize="@dimen/_14sdp" />
+
+                <View
+                    app:layout_constraintTop_toBottomOf="@id/txtResultShutter"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/viewOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:alpha=".2"
+                    android:background="@color/sweet_red" />
+
+                <TextView
+                    app:layout_constraintTop_toBottomOf="@id/viewOne"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:id="@+id/txtResultTotalPhotos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_photo"
+                    android:drawablePadding="@dimen/_6sdp"
+                    android:text="Total Photos"
+                    android:textSize="@dimen/_14sdp" />
+
+                <View
+                    app:layout_constraintTop_toBottomOf="@+id/txtResultTotalPhotos"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/viewTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:alpha=".2"
+                    android:background="@color/sweet_red"
+                    />
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewTwo"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:id="@+id/txtResultStorage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_sd_storage"
+                    android:drawablePadding="@dimen/_6sdp"
+                    android:text="Storage Need"
+                    android:textSize="@dimen/_14sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@color/sweet_gray_background"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Configuration has been changed, please touch calculate button"
+                android:backgroundTint="@color/sweet_gray_background"
+                android:textSize="@dimen/_14sdp" />
+        </FrameLayout>
+
+    </soup.neumorphism.NeumorphCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
