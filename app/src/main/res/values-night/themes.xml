@@ -4,6 +4,8 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
         <item name="android:colorBackground">@color/sweet_black_background</item>
+        <item name="colorShadowDark">@color/neumorph_shadowColorDark</item>
+        <item name="colorShadowLight">@color/neumorph_shadowColorLight</item>
 
     </style>
 </resources>

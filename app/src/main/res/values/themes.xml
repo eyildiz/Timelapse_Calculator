@@ -5,6 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:colorBackground">@color/sweet_gray_background</item>
         <item name="colorPrimary">@color/sweet_red</item>
+        <item name="colorShadowDark">@color/neumorph_shadowColorDark</item>
+        <item name="colorShadowLight">@color/neumorph_shadowColorLight</item>
     </style>
 
     <style name="Theme.TimelapseCalculator" parent="Base.Theme.TimelapseCalculator" />

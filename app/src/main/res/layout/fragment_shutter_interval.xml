@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+    <com.mobilancer.timelapsecalculator.ui.uicomponents.RulerInputViewComponent
+        android:id="@+id/rulerInputClipLength"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.mobilancer.timelapsecalculator.ui.uicomponents.RulerInputViewComponent
+        android:id="@+id/rulerInputEventDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rulerInputClipLength" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupFpsChoice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rulerInputEventDuration"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipFps24"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10sdp"
+            android:tag="24"
+            android:text="24 fps" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipFps30"
+            style="@style/ChipStyle"
+            android:tag="30"
+            android:text="30 fps" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipFps60"
+            style="@style/ChipStyle"
+            android:tag="60"
+            android:text="60 fps" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipFps120"
+            style="@style/ChipStyle"
+            android:tag="120"
+            android:text="120 fps" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/btnCalculate"
+        style="@style/Widget.Material3.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="Calculate"
+        app:icon="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroupFpsChoice" />
+
+    <com.mobilancer.timelapsecalculator.ui.uicomponents.CalculationResultViewComponent
+        android:id="@+id/calculationResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCalculate"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
